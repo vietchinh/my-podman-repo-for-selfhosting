@@ -6,6 +6,7 @@ You have to set your folder location inside the podlet before starting it. It ha
 To allow podman to use port 53, add this to sysctl.conf: ``net.ipv4.ip_unprivileged_port_start=53``. <br /> Source: https://github.com/containers/podman/blob/main/rootless.md <br/>
 After you done all of that, copy pod-pihole.kube into ``~/.config/containers/systemd``.
 If it doesn't exist, use this command: ``mkdir -p ~/.config/containers/systemd``. </br >
+Do not forget that you have to specify again a full path to your pod-pihole.yml file inside pod-pihole.kube! </br>
 Then ``systemctl daemon-reload --user`` and ``systemctl start --user pod-pihole``. <br />
 If it doesn't work, check the systemd logs. I use Cockpit to check the logs. <br />
 Now open port 53, and optionally 80 for the pihole UI and try it out! Don't forget to set your server ip to a static address. </br >
