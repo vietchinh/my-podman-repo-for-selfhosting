@@ -1,0 +1,17 @@
+[Unit]
+Description=Podlet for pihole adblocking and unbound dns with redis cache
+
+[Kube]
+AutoUpdate=registry
+Yaml=/pod-pihole.yml
+Network=host
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+TimeoutStopSec=900
+RestartSec=30
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
